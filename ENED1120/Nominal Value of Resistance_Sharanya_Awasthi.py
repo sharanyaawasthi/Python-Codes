@@ -1,0 +1,28 @@
+print('The following are the numerical values for each color on the resistor:\n')
+print("Black: 0\nBrown: 1\nRed: 2\nOrange: 3\nYellow: 4\nGreen: 5\nBlue: 6\nViolet: 7\nGray: 8\nWhite: 9\n")
+range = number1 = int(input("Enter the number corresponding to the first color on the resistor:\n"))
+number2 = int(input("Enter the number corresponding to the second color on the resistor:\n"))
+number3 = int(input("Enter the number corresponding to the third color on the resistor:\n"))
+print()
+print('The following are the abbreviations for each color of the tolerance:\n')
+print()
+print('Missing: M\nSilver: S\nGold: G\n')
+print()
+tol = input("Enter the color of the tolerance band:\n")
+nomvalue = (number1*10 + number2)*(10**number3)
+if tol == 'M' or tol == 'm':
+    range1 = nomvalue - (nomvalue*(20/100))
+    range2 = nomvalue + (nomvalue*(20/100))
+    print('The nominal value of resistance is {0}.\n'.format(nomvalue))
+    print('The range is {0} to {1}.'.format(range1, range2))
+elif tol == 'S' or tol == 's':
+    range1 = nomvalue - (nomvalue*(10/100))
+    range2 = nomvalue + (nomvalue*(10/100))
+    print('The nominal value of resistance is {0}.\n'.format(nomvalue))
+    print('The range is {0} to {1}.'.format(range1, range2))
+else:
+    range1 = nomvalue - (nomvalue*(5/100))
+    range2 = nomvalue + (nomvalue*(5/100))
+    print('The nominal value of resistance is {0}.\n'.format(nomvalue))
+    print('The range is {0} to {1}.'.format(range1, range2))
+    
